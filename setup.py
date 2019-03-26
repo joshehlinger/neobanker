@@ -11,7 +11,7 @@ setuptools.setup(
     py_modules=['neobanker'],
     entry_points={
         'console_scripts': [
-            'neobanker = neobanker:main'
+            'neobanker = banker:main'
         ]
     }
 )
