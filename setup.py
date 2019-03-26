@@ -5,9 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='neobanker',
+    version="0.0.1",
+    author="Joshua Ehlinger",
     install_requires=open('requirements.txt').read(),
     description='Collects neointerest',
     long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/joshehlinger/neobanker",
     py_modules=['neobanker'],
     entry_points={
         'console_scripts': [
