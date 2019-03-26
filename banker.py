@@ -2,6 +2,7 @@
 import time
 import sys
 import argparse
+import datetime
 from selenium import webdriver
 
 
@@ -11,6 +12,7 @@ def collect_interest(config):
 
     driver = webdriver.Chrome(options=options)
     try:
+        print ('Run starting at {}'.format(str(datetime.datetime.now())))
         driver.get('http://www.neopets.com/bank.phtml')
 
         #Login
