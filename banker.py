@@ -5,7 +5,10 @@ from selenium import webdriver
 
 
 def collect_interest(config):
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+
+    driver = webdriver.Chrome(options=options)
     try:
         driver.get('http://www.neopets.com/bank.phtml')
 
