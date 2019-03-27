@@ -29,9 +29,7 @@ def collect_interest(config):
         print('Login successful')
 
         #Collect interest
-        interest_button = driver.find_element_by_xpath(
-            '//*[@id="content"]/table/tbody/tr/td[2]/table[2]/tbody/tr/td/div/table/tbody/tr[2]/td/div/form/input[2]'
-        )
+        interest_button = driver.find_element_by_css_selector("input[value^='Collect Interest']")
         interest_button.click()
         print('Collected Interest!')
 
