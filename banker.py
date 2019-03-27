@@ -15,7 +15,7 @@ def collect_interest(config):
         print ('Run starting at {}'.format(str(datetime.datetime.now())))
         driver.get('http://www.neopets.com/bank.phtml')
 
-        #Login
+        # Login
         print('Logging in...')
         login_form = driver.find_element_by_class_name('welcomeLoginContent')
         username_login = login_form.find_element_by_name('username')
@@ -28,8 +28,9 @@ def collect_interest(config):
         login_button.click()
         print('Login successful')
 
-        #Collect interest
+        # Collect interest
         interest_button = driver.find_element_by_css_selector("input[value^='Collect Interest']")
+        driver.execute_script("arguments[0].scrollIntoView();", interest_button)
         interest_button.click()
         print('Collected Interest!')
 
@@ -37,9 +38,11 @@ def collect_interest(config):
         driver.quit()
         return 0
 
-    except Exception:
+    except Exception as e:
+        print(e)
         driver.quit()
         return 1
+
 
 def arg_parser() -> argparse.ArgumentParser:
     desc = 'Collect that interest'
